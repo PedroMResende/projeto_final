@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyTrip</title>
+  <!-- FAVICON -->
+  <link rel="icon" href="./assets/img/base_site/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./assets/img/base_site/apple-touch-icon.png">
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- navbar. -->
+  <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-white">
+
+    <div class="container pt-1 pb-1">
+      <a class="navbar-brand fw-bold" href="#">MyTrip</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- ícone do butão. -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-list"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
+        <ul class="navbar-nav">
+          
+                <a href="#hoteis" class="text-decoration-none p-md-2 p-lg-2 d-block d-md-block d-lg-block m-1"> Hotéis</a>
+                <a href="#promocoes" class="text-decoration-none p-md-2 p-lg-2 d-block d-md-block d-lg-block m-1"> Promoções</a>
+                <a href="#sobre-nos" class="text-decoration-none p-md-2 p-lg-2 d-block d-md-block d-lg-block m-1"> Sobre nós</a>
+                <a href="#quartos" class="text-decoration-none p-md-2 p-lg-2 d-block d-md-block d-lg-block m-1"> Quartos</a>
+                <a href="#avaliacoes" class="text-decoration-none p-md-2 p-lg-2 d-block d-md-block d-lg-block m-1"> Avaliações</a>
+                <a href="#perguntas" class="text-decoration-none p-md-2 p-lg-2 d-block d-md-block d-lg-block pe-lg-5 m-1"> Dúvidas </a>
+          <li class="nav-item d-block d-md-block d-lg-none pt-2 pb-2">
+            <!-- mostra quando a tela diminui -->
+            <a href="#" type="button" class="btn btn-orange w-100 w-md-100 rounded-0">Login</a>
+            <!--w100 width 100% rounded-0 tira o border-radius. -->
+          </li>
+          <!-- Quando a tela fica menor essa lista aparece(celular). d-block faz isso, quando display for médio não aparece -->
+          <li class="nav-item d-none d-md-none d-lg-block">
+            <!-- mostra quando a tela expande -->
+            <a href="#" type="button" class="btn btn-orange rounded-0 ps-lg-5 pe-lg-5">Login</a>
+            <!--w100 width 100% rounded-0 tira o border-radius. ps-> padding a esquerda pe-> padding a direita -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Fim NAVBAR -->
+
+  <!-- BANNER COM O FORMULÁRIO -->
+  <main class="w-100 min-vh-100 background-banner d-flex align-items-center">
+    <div class="container">
+      <div class="card rounded-1 border-0 p-1 pt-4 pb-4 p-lg-4 pb-md-0 pd-lg-0 shadow">
+        <!-- border-radius 1, borda-0, padding-1, padding-top-4, padding-buttom-4, padding-bottom para tellas médias 0 e para telas largas 0-->
+            <div class="card-body">
+                <form class="pb-lg-2" onsubmit="return false">
+                    <div class="row">
+
+                        <div class="col-12 col-md-12 col-lg-3 mb-3">
+                            <label for="localizacao" class="form-label fw-bold">Localização</label>
+                            <input type="text" class="form-control rounded-0" name="localizacao" id="localizacao"
+                              placeholder="Digite a localização">
+                        </div>
+              <!-- quando tá pequena a coluna ocupa toda a tela, quando tá media toda a tela, quando ta larga 3/12 da tela, e margin bottom de 3. -->
+                        <div class="col-12 col-md-12 col-lg-2 mb-3">
+                            <label for="entrada" class="form-label fw-bold">Entrada</label>
+                            <input type="date" class="form-control rounded-0" name="entrada" id="entrada">
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-2 mb-3">
+                            <label for="saida" class="form-label fw-bold">Saída</label>
+                            <input type="date" class="form-control rounded 0" name="saida" id="saida">
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-3 mb-3">
+                            <label for="periodo" class="form-label fw-bold">Período</label>
+                            <select class="form-select rounded-0" name="periodo" id="periodo" aria-label="Selecione o período">
+                                <option value="" selected>Selecione o período</option>
+                                <option value="madrugada">Madrugada</option>
+                                <option value="manha">Manhã</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noite">Noite</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-2 mb-3 pt-3 d-lg-flex align-items-end">
+                            <a href="#" class="btn btn-lg btn-orange w-100 rounded-0 border-0 p-lg-1"> Pesquisar </a>
+                        </div>
+
+                    </div>
+                </form>
+          <!-- onsubmit false não recarrega a página toda vez que clica-->
+            </div>
+      </div>
+    </div>
+  </main>
+   <!-- largura 100% minimo da altura 100% -->
+   <!-- FIM DO BANNER E DO FORMULÁRIO -->
+
+   <!-- DESTAQUES -->
+   <main class="w-100 pb-5 pt-lg-4 pb-lg-5" id="hoteis">
+    <div class="container pt-5 pb-2 pt-lg-5 pb-lg-0">
+        <h1 class="fs-4 text-center text-lg-start mb-5 fw-bold">Hotéis e Pousadas em destaques</h1>
+        <div class="row mb-4">
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/350569443.jpg?k=45e6d7cb123db8c6d78f2005020519a9b346bc88d67fbd1d8c4a0674b633c393&o=" alt="Hotel 01" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-orange ps-2 pe-2 pt-1 pb-1">R$:669,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                          <h5>Hotel Viva+</h5>
+                          <p class="text-muted">Porto-Seguro/BA</p>
+                          <p class="card-text card-justify">
+                            Hotel próximo de várias lindas praias, com várias atrações turísticas da região da Bahia. Excelente localização em Porto Seguro. 
+                          </p>
+                          <a href="./pags/available.html" class="btn btn-orange w-100 rounded-0">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/422678/d479c9fbb87c15c43e34ef8e06626adcunnamed/0,0,2000,1333/2000,1333,1/0/default.jpg" alt="Hotel 02" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-orange ps-2 pe-2 pt-1 pb-1">R$:720,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                          <h5>Pousada Sereia</h5>
+                          <p class="text-muted">Maragogi/AL</p>
+                          <p class="card-text card-justify">Pousada com alguns bangalôs em alto mar, experiência única e incrível de estadia nas lindas praias de Maragogi, o caribe brasileiro.</p>
+                          <a href="./pags/not-available.html" class="btn btn-orange w-100 rounded-0"> Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://www.melhoresdestinos.com.br/wp-content/uploads/2024/10/melhores-resorts-praia-brasil-capa.jpg" alt="Hotel 03" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-orange ps-2 pe-2 pt-1 pb-1">R$699,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                          <h5>Hotel Cubanacan</h5>
+                          <p class="text-muted">Carneiros/PE</p>
+                          <p class="card-text card-justify"> Hotel excelente para famílias com filhos, várias atividades durante o dia. Hotel conta com atrações diferentes todos os dias no bangalô.</p>
+                          <a href="./pags/available.html" class="btn btn-orange w-100 rounded-0"> Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <a href="./pags/all-hotels.html" class="btn btn-orange-outline ps-4 pe-4">Visualizar todos</a>
+            </div>
+        </div>
+    </div>
+   </main>
+   <!-- FIM DOS DESTAQUES -->
+
+   <!-- PROMOÇÕES -->
+   <main class="w-100 pb-5 pb-lg-5" id="promocoes">
+      <div class="container"> 
+          <div class="w-100 title mb-5 mb-md-5 mb-lg-5 pt-lg-4 pb-lg-0">
+              <h1 class="fs-4 text-center text-lg-start mb-2 fw-bold">Nossos hotéis e pousadas em promoções.</h1>
+          </div>
+          <div class="row mb-4">
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://imgmd.net/images/v1/guia/1605190/praia-de-saquaira.jpg" alt="Hotel 04" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-purple ps-2 pe-2 pt-1 pb-1">R$400,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                      <h5 class="card-title mb-1">
+                          Pousada Viviera
+                      </h5>
+                      <p class="text-muted">Barra Grande/BA</p>
+                      <a href="./pags/available.html" class="btn btn-orange rounded-0 w-100">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://www.buenasdicas.com/wp-content/uploads/2022/02/melhores-hoteis-joao-pessoa-pb.jpg.webp" alt="Hotel 05" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-purple ps-2 pe-2 pt-1 pb-1">R$420,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                      <h5 class="card-title mb-1">
+                        Hotel Vila Rica
+                      </h5>
+                      <p class="text-muted">João Pessoa/PB</p>
+                      <a href="./pags/not-available.html" class="btn btn-orange rounded-0 w-100">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2021/03/Porto-de-Galinhas-Resorts-Pousadas-Capa-3.jpg" alt="Hotel 06" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-purple ps-2 pe-2 pt-1 pb-1">R$430,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                      <h5 class="card-title mb-1">
+                        Paisano Hotel
+                      </h5>
+                      <p class="text-muted">Porto de Galinhas/PE</p>
+                      <a href="./pags/not-available.html" class="btn btn-orange rounded-0 w-100">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                  <a href="#" class="btn btn-orange-outline ps-4 pe-4">
+                    Visualizar todos
+                  </a>
+              </div>
+          </div>
+      </div>
+   </main>
+   <!-- FIM PROMOÇÕES -->
+
+   <!-- DIFERENCIAIS -->
+   <main class="w-100" id="sobre-nos">
+      <div class="container">
+          <div class="w-100 title mb-5 mb-md-5 mb-lg-5 pt-lg-4 pb-lg-0">
+              <h1 class="fs-4 text-center text-md-start text-lg-start mb-2 fw-bold">
+                Veja alguns dos nossos diferenciais
+              </h1>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="row">
+                      <div class="col-12  col-md-4 col-lg-4 mb-4">
+                          <div class="card">
+                              <img src="https://www.anid.org.br/site/noticias/principal_brasil-e-o-5-pais-com-mais-redes-de-cameras-de-vigilancia-com-reconhecimento-facial-no-mundo-b9f507ba01b735e419e4c3b0efa63720.jpg" alt="Camera" class="card-img-top">
+                              <div class="card-body card-fixed">
+                                  <div class="card-title">
+                                    Câmeras de segurança
+                                  </div>
+                                  <p class="card-text text-muted">
+                                    Uma das coisas que nos preocupamos ao viajar é a segurança.
+                                  </p>
+                                  <p class="card-text text-muted card-justify">
+                                     Por isso estamos sempre investindo fortemente em segurança, justamente para você se  sentir o mais seguro possível enquanto estiver em um dos nossos hotéis ou pousadas.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-12  col-md-4 col-lg-4 mb-4">
+                          <div class="card">
+                              <img src="https://advancedhotel.com.br/wp-content/uploads/2021/04/Advanced-Cuiaba-Cafe-da-manha-390.jpg" alt="Cafe manha" class="card-img-top">
+                              <div class="card-body card-fixed">
+                                  <div class="card-title">
+                                    All-Inclusive
+                                  </div>
+                                  <p class="card-text text-muted">
+                                    Quem não gosta de tomar aquela cervejinha na praia né? 
+                                  </p>
+                                  <p class="card-text text-muted card-justify">
+                                    Toda nossa rode de hotéis conta com uma diária All Inclusive, com bebidas alcoólicas e não alcoólicas, café da manhã, almoço e jantar. Mais de 30 variedades de bebidas e cardápio novo todo dia.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-12 col-md-4 col-lg-4 mb-4">
+                          <div class="card">
+                              <img src="https://lirp.cdn-website.com/f7e74b02/dms3rep/multi/opt/GOPR2276-1920w.JPG" alt="Criancas" class="card-img-top">
+                              <div class="card-body card-fixed">
+                                  <div class="card-title">
+                                    Atividades para crianças
+                                  </div>
+                                  <p class="card-text text-muted">
+                                    Acha que a diversão é só para adultos?
+                                  </p>
+                                  <p class="card-text text-muted card-justify">
+                                    Nossos hotéis e pousadas contam com atividades para crianças durante o dia e também durante a noite, com profissionais especializados ao entretenimento infantil. Você não achou que deixaríamos seus filhos ou filhas de fora né?
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+   </main>
+      <!-- FIM DOS DIFERENCIAIS -->
+
+      <!-- CARROSEL -->
+   <main class="w-100 pb-4 pb-md-4 pt-lg-4 pb-lg-4" id="quartos">
+      <div class="container pt-5 pb-2 pt-lg-5 pb-lg-5">
+          <h1 class="fs-4 text-center mb-5 fw-bold"> Conheça nossos quartos aconchegantes</h1>
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide p-3 pe-lg-5 ps-lg-5 carousel-limited">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="https://i0.wp.com/blog.brisahoteis.com.br/wp-content/uploads/2024/09/Brisa-Janeiro-2020-KAIO-FRAGOSO-19-Grande.jpeg?resize=1024%2C684&ssl=1" alt="Quarto 1" class="d-block w-100 rounded-1 carousel-item-img carousel-limited" class="d-block w-100 lg-carousel-limited" alt="Quarto 1">
+              </div>
+              <div class="carousel-item">
+                  <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/410788631.jpg?k=18c0b6c025be43347a273279ec4d3232f04269fec8cbbbb40c60684840839218&o=&hp=1" class="d-block w-100 carousel-limited" alt="Quarto 2">
+              </div>
+              <div class="carousel-item">
+                  <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/286460904.jpg?k=1f5674e7f8d45de45aeee4a81c752e67e02b892c157e78f32103505582780d8d&o=&hp=1" class="d-block w-100 carousel-limited" alt="Quarto 3">
+              </div>
+              <div class="carousel-item">
+                  <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/10485426.jpg?k=a6ebed1626494d62084bbe7dff5ab627d8f514aae28a2b920a55888c5741841c&o=&hp=1" class="d-block w-100 carousel-limited" alt="Quarto 4">
+              </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+              </button>
+      </div>      
+   </main>
+   <!-- FIM DO CARROSEL -->
+
+   <!-- AVALIAÇÕES -->
+
+   <main class="w-100 pt-lg-4 pb-lg-5" id="avaliacoes">
+      <div class="container pt-5 pb-2 pt-lg-5 pb-lg-5">
+          <div class="w-100 title mb-5 mb-md-5 mb-lg-5 pt-lg-0">
+              <h1 class="fs-4 text-center text-lg-center mb-2 fw-bold">
+                Avaliações dos nossos clientes.
+              </h1>
+              <div class="line-orange m-auto"></div>
+          </div>
+          <div class="row pt-3 pt-md-3 pt-lg-3">
+              <div class="col-12 col-md-12  col-lg-4 mb-4 mb-md-4">
+                  <div class="card border-0 shadow p-2">
+                      <div class="w-100 mb-3">
+                        <h4 class="fs-5">
+                          Carlos Eduardo Oliveira
+                        </h4>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                      </div>
+                      <p class="text-muted card-justify"> Excelentes hotéis e excelentes estruturas, adorei, recomendo. </p>
+                  </div>
+              </div>
+              <div class="col-12 col-md-12  col-lg-4 mb-4 mb-md-4">
+                  <div class="card border-0 shadow p-2">
+                      <div class="w-100 mb-3">
+                        <h4 class="fs-5">
+                          Patrícia Teles
+                        </h4>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                      </div>
+                      <p class="text-muted card-justify"> Hotel Vila Rica lindíssimo, só acho que faltou uma variedade de buffet nos almoços. </p>
+                  </div>
+              </div>
+              <div class="col-12 col-md-12  col-lg-4 mb-4 mb-md-4">
+                  <div class="card border-0 shadow p-2">
+                      <div class="w-100 mb-3">
+                        <h4 class="fs-5">
+                          Kevin Caminha
+                        </h4>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                        <span class="star"><i class="fa-solid fa-star"></i></span>
+                      </div>
+                      <p class="text-muted card-justify">As atividades para as crianças salvaram minha viagem, meu filho aproveitou bastante e eu também. </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <a href="#" class="btn btn-orange-outline ps-4 pe-4">
+            Outros comentários
+          </a>
+        </div>
+      </div>
+
+   </main>
+   <!-- Perguntas frequentes. -->
+   <main id="perguntas">          
+    <div class="container pt-5 pb-4 pt-lg-5 pb-lg-5">
+      <h2 class="fs-4 fw-bold mb-4 text-center text-lg-center">Perguntas Frequentes</h2>
+      <div class="accordion" id="accordionFAQ">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Quais são os horários de check-in e check-out?
+            </button>
+            </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionFAQ">
+        <div class="accordion-body text-muted">
+          O check-in começa às 14h e o check-out deve ser feito até às 12h.
+        </div>
+      </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Os hotéis oferecem camas extras se for uma necessidade?
+            </button>
+            </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionFAQ">
+        <div class="accordion-body text-muted">
+          Sim! Pedimos apenas para avisar com pelo menos 72h de antecedência se quiser adicionar camas. 
+        </div>
+      </div>
+    </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Existem quartos para fumantes?
+            </button>
+            </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionFAQ">
+        <div class="accordion-body text-muted">
+          Sim! Todo hotel conta com uma quota reservada de quartos para fumantes, e pode ficar tranquilo que são separados dos que fazem questão de não sentir o cheiro da fumaça. 
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Aceitam pets?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+        data-bs-parent="#accordionFAQ">
+        <div class="accordion-body text-muted">
+          Sim, algumas unidades são pet-friendly. Consulte os detalhes antes da reserva.
+        </div>
+          </div>
+           </div>
+        </div>
+    </div>
+   </main>
+   <!-- FIM DAS PERGUNTAS FREQUENTES. -->
+
+   <!-- RODAPÉ -->
+   <footer class="w-100 bg-light">
+      <div class="container pt-5 pt-lg-5 pb-lg-3">
+          <div class="row">
+              <div class="col-12 col-md-3 col-lg-4 mb-3 mb-md-0 mb-lg-0">
+                  <h4 class="fs-3 fw-bold text-uppercase mb-2 mb-md-4 md-lg-4">
+                    MyTrip
+                  </h4>
+                  <p class="text-muted card-justify">
+                      Somos uma empresa que nasceu no ano de 1998, cuja missão é entregar aos nossos clientes e parceiros os melhores lugares para ter um lazer e um descanso excelente e merecido. 
+                  </p>
+                  <p> 
+                      <a href="https://github.com/PedroMResende" class="text-decoration-none text-muted me-1 me-md-1 me-lg-2" title="github">
+                          <i class="fa-brands fa-github" aria-hidden="true"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/in/pedro-resende-417a6b217/" class="text-decoration-none text-muted me-1 me-md-1 me-lg-2" title="linkedin">
+                          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                      </a>
+                  </p>
+              </div>
+              <div class="col-12 col-md-3 col-lg-4 mb-3 mb-md-0 mb-lg-0">
+                  <h4 class="fs-3 fw-bold text-uppercase mb-2 mb-md-4 mb-lg-4">
+                    Minha conta
+                  </h4>
+                  <p class="mb-0">
+                    <a href="#" class="text-decoration-none text-muted">Minhas viagens</a>
+                  </p>
+                  <p class="mb-0">
+                    <a href="#" class="text-decoration-none text-muted">Meu perfil</a>
+                  </p>
+              </div>
+              <div class="col-12 col-md-3 col-lg-4 mb-3 mb-md-0 mb-lg-0">
+                  <h4 class="fs-3 fw-bold text-uppercase mb-2 md-md-4 md-lg-4">
+                    Informações adicionais
+                  </h4>
+                  <p class="mb-0">
+                    <a href="#" class="text-decoration-none text-muted">Termos e condições</a>
+                  </p>
+                  <p class="mb-0">
+                    <a href="#" class="text-decoration-none text-muted">Política de privacidade</a>
+                  </p>
+                  <p class="mb-0">
+                    <a href="#" class="text-decoration-none text-muted">Central de ajuda</a>
+                  </p>
+                  <p class="mb-0">
+                    <a href="#" class="text-decoration-none text-muted">Condições de uso</a>
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="w-100 bg-color-orange d-flex justify-content-center align-items-center">
+          <p class="mb-0 pt-1 pb-1">
+            &copy; Todos os direitos reservados
+          </p>
+      </div>
+   </footer>
+   <!-- FIM RODAPÉ -->
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+</html>

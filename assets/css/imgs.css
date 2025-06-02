@@ -1,0 +1,15 @@
+.card-img-top { 
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-justify { 
+    text-align: justify;
+}
+
+.carousel-limited { 
+    width: 80%;
+    height: 50vw;
+    object-fit: cover;
+    margin: 0 auto;
+}
