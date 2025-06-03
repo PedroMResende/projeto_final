@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-light">
 
     <div class="container pt-1 pb-1">
       <a class="navbar-brand fw-bold" href="/index.html">MyTrip</a>
@@ -33,6 +33,9 @@
             <!-- mostra quando a tela diminui -->
             <a href="#" type="button" class="btn btn-orange w-100 w-md-100 rounded-0">Login</a>
             <!--w100 width 100% rounded-0 tira o border-radius. -->
+          <li class="navbar-item me-5">
+            <a href="/index.html" class="nav-link"> Home </a>
+          </li>
           </li>
           <!-- Quando a tela fica menor essa lista aparece(celular). d-block faz isso, quando display for médio não aparece -->
           <li class="nav-item d-none d-md-none d-lg-block">
@@ -45,7 +48,122 @@
     </div>
     </nav>
   <!-- FIM DO NAVBAR -->
-    <main class="w-100">
+
+    <main class="w-100 pb-5 pt-lg-2 pb-lg-2">
+      <div class="container pt-5 pb-2 pt-lg-5 pb-lg-0">
+          <nav aria-label="breadcrumb" class="mb-4">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                      <a href="/index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item" aria-current="page">
+                      Todos os hotéis
+                  </li>
+              </ol>
+          </nav>
+          <div class="row mb-4">
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/350569443.jpg?k=45e6d7cb123db8c6d78f2005020519a9b346bc88d67fbd1d8c4a0674b633c393&o=" alt="imagem-todos-1" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-orange ps-2 pe-2 pt-1 pb-1">
+                            R$669,00
+                          </span>
+                      </div>
+                      <div class="card-body p-3">
+                          <h5 class="card-title mb-1">Hotel Viva+</h5>
+                          <p class="text-muted">Porto-Seguro/BA</p>
+                          <p class="card-text card-justify">
+                            Hotel próximo de várias lindas praias, com várias atrações turísticas da região da Bahia. Excelente localização em Porto Seguro. 
+                          </p>
+                          <a href="./available.html" class="btn btn-orange rounded-0 w-100">
+                              Verificar disponibilidade. 
+                          </a>
+                      </div>
+                  </div>
+          </div>
+
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/422678/d479c9fbb87c15c43e34ef8e06626adcunnamed/0,0,2000,1333/2000,1333,1/0/default.jpg" alt="Hotel 02" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-orange ps-2 pe-2 pt-1 pb-1">R$:720,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                          <h5>Pousada Sereia</h5>
+                          <p class="text-muted">Maragogi/AL</p>
+                          <p class="card-text card-justify">Pousada com alguns bangalôs em alto mar, experiência única e incrível de estadia nas lindas praias de Maragogi, o caribe brasileiro.</p>
+                          <a href="./pags/not-available.html" class="btn btn-orange w-100 rounded-0"> Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://www.melhoresdestinos.com.br/wp-content/uploads/2024/10/melhores-resorts-praia-brasil-capa.jpg" alt="Hotel 03" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-orange ps-2 pe-2 pt-1 pb-1">R$699,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                          <h5>Hotel Cubanacan</h5>
+                          <p class="text-muted">Carneiros/PE</p>
+                          <p class="card-text card-justify"> Hotel excelente para famílias com filhos, várias atividades durante o dia. Hotel conta com atrações diferentes todos os dias no bangalô.</p>
+                          <a href="./pags/available.html" class="btn btn-orange w-100 rounded-0"> Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://imgmd.net/images/v1/guia/1605190/praia-de-saquaira.jpg" alt="Hotel 04" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-purple ps-2 pe-2 pt-1 pb-1">R$400,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                      <h5 class="card-title mb-1">
+                          Pousada Viviera
+                      </h5>
+                      <p class="text-muted">Barra Grande/BA</p>
+                      <a href="./pags/available.html" class="btn btn-orange rounded-0 w-100">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://www.buenasdicas.com/wp-content/uploads/2022/02/melhores-hoteis-joao-pessoa-pb.jpg.webp" alt="Hotel 05" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-purple ps-2 pe-2 pt-1 pb-1">R$420,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                      <h5 class="card-title mb-1">
+                        Hotel Vila Rica
+                      </h5>
+                      <p class="text-muted">João Pessoa/PB</p>
+                      <a href="./pags/not-available.html" class="btn btn-orange rounded-0 w-100">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-4 mb-5">
+                  <div class="card shadow border-0">
+                      <div class="position-relative">
+                          <img src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2021/03/Porto-de-Galinhas-Resorts-Pousadas-Capa-3.jpg" alt="Hotel 06" class="card-img-top">
+                          <span class="position-absolute bottom-0 right-0 bg-color-purple ps-2 pe-2 pt-1 pb-1">R$430,00</span>
+                      </div>
+                      <div class="card-body p-3">
+                      <h5 class="card-title mb-1">
+                        Paisano Hotel
+                      </h5>
+                      <p class="text-muted">Porto de Galinhas/PE</p>
+                      <a href="./pags/not-available.html" class="btn btn-orange rounded-0 w-100">Verificar disponibilidade</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
 
     </main>
      <!-- RODAPÉ -->
